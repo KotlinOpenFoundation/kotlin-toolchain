@@ -26,7 +26,7 @@ internal class GenerateKlibsCommand : AmperProjectAwareCommand(name = "generate-
     val withPlugins by option(
         "--with-plugins",
         help = "Whether to take plugin contributed entities into account.",
-    ).flag()
+    ).flag("--without-plugins", default = true)
 
     override suspend fun run(cliContext: ProjectCliContext) {
         withBackend(

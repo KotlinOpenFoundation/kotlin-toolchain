@@ -269,6 +269,29 @@ class CinteropTest : CliTestBase() {
         )
     }
 
+    /**
+     * The klibs the IDE needs have to be generated for the defs a plugin registers, too, and not only for
+     * the ones a module declares itself. A build runs the plugin tasks anyway; this is about the sync.
+     */
+    @Test
+    @MacOnly
+    fun `ide sync - cinterop from a plugin`() = runSlowTest {
+        val result = runCli(
+            projectDir = testProject("cinterop/cinterop-plugin"),
+            "ide-integration", "generate-klibs",
+        )
+
+        assertCinteropModel(
+            result = result,
+            expectedRepresentation = """
+                module: app
+                 fragment: macosArm64 | generated/app/macosArm64/cinterop
+                  - app-cinterop-custom.klib
+                module: plugin
+            """.trimIndent(),
+        )
+    }
+
     private fun assertCinteropModel(
         result: AmperCliResult,
         expectedRepresentation: String,
