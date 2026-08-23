@@ -1,0 +1,113 @@
+# Keeps every fix/* branch a single patch on top of the current upstream `main`.
+#
+# A fork receives no events from the repository it was forked from, so the only way to notice that
+# upstream moved is to look; hence the schedule. It lives on the default branch because that is the
+# only place a scheduled workflow runs from.
+#
+# Only fix/* branches are pushed. They carry no workflow files, which matters: the token of a workflow
+# run is not allowed to push changes under .github/workflows, so a job that maintained an integration
+# branch would need a personal access token. The distribution is assembled by the publishing workflow
+# in its own working tree instead.
+name: Rebase fixes onto upstream
+
+on:
+  schedule:
+    # nightly, at a minute nobody else picked
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+    inputs:
+      verify:
+        description: "Compile and test a rebased branch before pushing it."
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write # to push the rebased branches
+  issues: write # to report a branch that does not rebase cleanly
+
+concurrency:
+  group: rebase-fixes-onto-upstream
+  cancel-in-progress: false
+
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reuse the toolchain and dependency caches
+        # The verification below builds and tests, which provisions a JRE and a distribution and
+        # resolves dependencies; all of it lands under this directory.
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/JetBrains/Kotlin
+          key: kotlin-toolchain-${{ runner.os }}-${{ hashFiles('kotlin', 'libs.versions.toml') }}
+          restore-keys: |
+            kotlin-toolchain-${{ runner.os }}-
+
+      - name: Rebase the fix branches
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERIFY: ${{ inputs.verify == null && 'true' || inputs.verify }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git remote add upstream https://github.com/JetBrains/kotlin-toolchain.git
+          git fetch -q upstream main
+          upstream="$(git rev-parse upstream/main)"
+          echo "Upstream main is at $upstream ($(git log -1 --format=%s upstream/main))"
+
+          branches=$(git ls-remote --heads origin 'refs/heads/fix/*' | sed 's|.*refs/heads/||' | sort)
+          test -n "$branches" || { echo "::error::No fix/* branch to rebase"; exit 1; }
+
+          rebased=""
+          for branch in $branches; do
+            git fetch -q origin "$branch"
+            git checkout -q -B "$branch" "origin/$branch"
+
+            if git merge-base --is-ancestor "$upstream" HEAD; then
+              echo "$branch already sits on the current upstream main"
+              continue
+            fi
+
+            echo "::group::Rebasing $branch"
+            if ! git rebase upstream/main; then
+              git rebase --abort
+              echo "::endgroup::"
+              echo "::error::$branch does not rebase onto $upstream cleanly, left untouched"
+              title="Rebase onto upstream failed: $branch"
+              if [ -z "$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')" ]; then
+                gh issue create --title "$title" --body "\`$branch\` does not rebase onto \`$upstream\`
+          (\`$(git log -1 --format=%s upstream/main)\`) without conflicts, so it was left as it was.
+
+          Rebase it by hand, push it, and this workflow takes over again. Until then the published
+          distribution keeps carrying the previous version of the fix, and the run that reported this
+          is [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+              fi
+              continue
+            fi
+            echo "::endgroup::"
+
+            if [ "$VERIFY" = "true" ]; then
+              echo "::group::Verifying $branch"
+              # The wrapper provisions its own JDK and toolchain, cached between branches of this run.
+              ./kotlin --log-level=warn build -m amper-cli
+              ./kotlin --log-level=warn test -m schema
+              echo "::endgroup::"
+            fi
+
+            git push --force-with-lease origin "$branch"
+            rebased="$rebased $branch"
+            echo "Rebased $branch onto $upstream"
+          done
+
+          if [ -n "$rebased" ]; then
+            echo "::notice::Rebased onto $upstream:$rebased. Publish a new fork version to ship them."
+          else
+            echo "Nothing to rebase."
+          fi

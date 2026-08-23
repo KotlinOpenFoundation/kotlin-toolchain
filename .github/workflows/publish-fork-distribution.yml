@@ -1,0 +1,393 @@
+# Publishes this fork so that a project can use it without credentials anywhere.
+#
+# The pipeline runs in three phases, so that a failure says which one broke, and so that a phase can
+# be re-run without building the distribution again:
+#
+#   build    merge the fix branches, decide the version, build the distribution and the libraries
+#   archive  attach the distribution archive to a release of its own
+#   maven    push everything else - libraries, scripts, checksums, metadata - to the branch that
+#            GitHub Pages serves
+#
+# The archive is 200+ MB, more than a couple of which would exhaust the 1 GB of a Pages site, so it
+# lives in a release, and the wrapper scripts published for a version name the release of that same
+# version. Everything else is kilobytes, so the site keeps every version ever published.
+#
+# The site is served straight from the `maven-site` branch, which this workflow writes, so Pages has
+# to be configured to deploy from that branch at its root.
+#
+# See PUBLISHING-FORK.md for how to consume the result.
+name: Publish fork distribution
+on:
+  workflow_dispatch:
+    inputs:
+      suffix:
+        description: Appended to the upstream version, marking the build as a fork of it.
+        required: false
+        default: fork-kof-1
+        type: string
+      version:
+        description: Full version to publish. Overrides the version derived from the upstream one.
+        required: false
+        type: string
+  push:
+    tags:
+    - dist-v*
+permissions:
+  contents: write
+concurrency:
+  group: publish-fork-distribution
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.value }}
+      tag: ${{ steps.version.outputs.tag }}
+      base: ${{ steps.base.outputs.value }}
+      sha256: ${{ steps.checksum.outputs.value }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Merge the fix branches
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        : > fixes.txt
+        branches=$(git ls-remote --heads origin 'refs/heads/fix/*' | sed 's|.*refs/heads/||' | sort)
+        test -n "$branches" || { echo "::error::No fix/* branch to merge"; exit 1; }
+        for branch in $branches; do
+          git fetch -q origin "$branch"
+          if ! git merge --no-edit -q FETCH_HEAD; then
+            echo "::error::$branch does not merge into this branch cleanly"
+            exit 1
+          fi
+          echo "$branch $(git rev-parse --short FETCH_HEAD) $(git log -1 --format=%s FETCH_HEAD)" >> fixes.txt
+        done
+        echo "Merged the fixes:"
+        cat fixes.txt
+    - name: Reuse the toolchain and dependency caches
+      # The wrapper provisions a JRE and the distribution that builds this one, and the build resolves
+      # dependencies; all of it lands under this directory. The project build directory is left out on
+      # purpose: incremental state that is wrong would be published and pinned by checksum.
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/JetBrains/Kotlin
+        key: kotlin-toolchain-${{ runner.os }}-${{ hashFiles('kotlin', 'libs.versions.toml', 'sources/common.module-template.yaml') }}
+        restore-keys: |
+          kotlin-toolchain-${{ runner.os }}-
+    - name: Decide which version to publish
+      id: version
+      run: |
+        set -euo pipefail
+        if [ -n "${{ inputs.version }}" ]; then
+          version="${{ inputs.version }}"
+          echo "Publishing $version, as asked"
+        else
+          line="$(tr -d " \t\r\n" < next-amper-version.txt)"
+          test -n "$line"
+          metadata="https://packages.jetbrains.team/maven/p/amper/amper/org/jetbrains/kotlin/kotlin-cli/maven-metadata.xml"
+          upstream_version="$(curl -fsSL "$metadata" | grep -o "<version>[^<]*</version>" | sed "s|</*version>||g" | grep -E "^$line-dev-[0-9]+$" | sort -t- -k3 -n | tail -1)"
+          test -n "$upstream_version" || { echo "::error::Upstream published no $line-dev-<build> version"; exit 1; }
+          suffix="${{ inputs.suffix }}"
+          version="$upstream_version-${suffix:-fork-kof-1}"
+          echo "Upstream published $upstream_version, publishing $version"
+        fi
+        sed -i -E "0,/^    version: .*/s|^    version: .*|    version: $version|" sources/common.module-template.yaml
+        echo "value=$version" >> "$GITHUB_OUTPUT"
+        echo "tag=v$version" >> "$GITHUB_OUTPUT"
+    - name: Report which upstream commit this is built on
+      id: base
+      run: |
+        set -euo pipefail
+        git remote add upstream https://github.com/JetBrains/kotlin-toolchain.git
+        git fetch -q upstream main
+        echo "value=$(git rev-parse --short upstream/main)" >> "$GITHUB_OUTPUT"
+        if ! git merge-base --is-ancestor upstream/main HEAD; then
+          behind="$(git rev-list --count HEAD..upstream/main)"
+          echo "::warning::This build is $behind commits behind the upstream main, while its version names the newest upstream development build. Run the rebase workflow first if that difference matters."
+        fi
+    - name: Build the distribution and install it into the local Maven repository
+      run: ./kotlin do uploadAmperDistributionLocal
+    - name: Publish the libraries into the local Maven repository
+      run: ./kotlin publish mavenLocal
+    - name: Stage what the other phases need
+      run: |
+        set -euo pipefail
+        version='${{ steps.version.outputs.value }}'
+        m2="$HOME/.m2/repository"
+        mkdir -p staging/maven/org/jetbrains staging/release
+        cp -r "$m2/org/jetbrains/amper" staging/maven/org/jetbrains/amper
+        mkdir -p staging/maven/org/jetbrains/kotlin
+        for artifact in kotlin-cli kotlin-cli-sdkman; do
+          if [ -d "$m2/org/jetbrains/kotlin/$artifact" ]; then
+            cp -r "$m2/org/jetbrains/kotlin/$artifact" "staging/maven/org/jetbrains/kotlin/$artifact"
+          fi
+        done
+        # These describe the local repository of this runner and mean nothing to a consumer.
+        find staging/maven -name '_remote.repositories' -delete
+        find staging/maven -name 'maven-metadata-local.xml' -delete
+        # The archive is served from a release, so it does not belong in the Maven tree.
+        archive="staging/maven/org/jetbrains/kotlin/kotlin-cli/$version/kotlin-cli-$version-dist.tgz"
+        test -f "$archive"
+        mv "$archive" "staging/release/kotlin-cli-$version-dist.tgz"
+        cp fixes.txt staging/fixes.txt
+        echo "Archive: $(du -h staging/release/*.tgz | cut -f1), rest of the tree: $(du -sh staging/maven | cut -f1)"
+    - name: Compute the distribution checksum
+      id: checksum
+      run: |
+        set -euo pipefail
+        version='${{ steps.version.outputs.value }}'
+        tgz="staging/release/kotlin-cli-$version-dist.tgz"
+        sha="$(sha256sum "$tgz" | cut -d' ' -f1)"
+        echo "$sha" > "$tgz.sha256"
+        echo "value=$sha" >> "$GITHUB_OUTPUT"
+        echo "SHA-256 of the distribution: $sha"
+        # the wrappers published for this version verify the archive, so they have to carry its checksum
+        grep -rqF "$sha" "staging/maven/org/jetbrains/kotlin/kotlin-cli/$version"
+    - name: Hand the result to the other phases
+      uses: actions/upload-artifact@v4
+      with:
+        name: distribution
+        path: staging
+        retention-days: 7
+        if-no-files-found: error
+  archive:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: distribution
+        path: staging
+    - name: Attach the distribution to its release
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        set -euo pipefail
+        version='${{ needs.build.outputs.version }}'
+        tag='${{ needs.build.outputs.tag }}'
+        tgz="staging/release/kotlin-cli-$version-dist.tgz"
+        test -f "$tgz"
+        repo="${GITHUB_REPOSITORY#*/}"
+        owner='${{ github.repository_owner }}'
+        notes="Distribution of $version, built on upstream commit ${{ needs.build.outputs.base }}. SHA-256 \`${{ needs.build.outputs.sha256 }}\`. Install it with the commands on https://${owner,,}.github.io/$repo/"
+        # This phase has no checkout, so `gh` cannot infer the repository from a git remote and has to
+        # be told which one to act on.
+        if gh release view --repo "$GITHUB_REPOSITORY" "$tag" >/dev/null 2>&1; then
+          gh release edit --repo "$GITHUB_REPOSITORY" "$tag" --title "Kotlin Toolchain $version" --notes "$notes"
+        else
+          gh release create --repo "$GITHUB_REPOSITORY" "$tag" --title "Kotlin Toolchain $version" --notes "$notes"
+        fi
+        gh release upload --repo "$GITHUB_REPOSITORY" "$tag" "$tgz" "$tgz.sha256" --clobber
+  maven:
+    needs:
+    - build
+    - archive
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # only the previously published tree is needed from git, and it is fetched below
+        fetch-depth: 1
+    - uses: actions/download-artifact@v4
+      with:
+        name: distribution
+        path: staging
+    - name: Restore the previously published Maven tree
+      # A Pages deployment replaces the whole site and remembers nothing of the one before it, while
+      # this runner has only the version it just built. The `maven-site` branch is what the site was
+      # last time: it holds the published tree and nothing else, which is why a workflow may write it
+      # - the token of a run may not push changes under `.github/workflows`.
+      run: |
+        set -euo pipefail
+        mkdir -p _site
+        if git ls-remote --exit-code --heads origin maven-site >/dev/null 2>&1; then
+          git fetch -q --depth 1 origin maven-site
+          git archive FETCH_HEAD | tar -x -C _site
+          echo "Restored the versions published so far:"
+          cat _site/published-versions.txt || true
+        else
+          echo "No maven-site branch yet; starting a new tree."
+        fi
+    - name: Merge what was built into the published Maven tree
+      run: |
+        set -euo pipefail
+        mkdir -p _site/maven/org/jetbrains
+        cp -r staging/maven/org/jetbrains/. _site/maven/org/jetbrains/
+        cp staging/fixes.txt fixes.txt
+        # Archives of older versions, from before they were published as release assets.
+        find _site/maven -name '*-dist.tgz' -print -delete
+        version='${{ needs.build.outputs.version }}'
+        list=_site/published-versions.txt
+        touch "$list"
+        grep -Fxv "$version" "$list" > "$list.new" || true
+        mv "$list.new" "$list"
+        echo "$version" >> "$list"
+        echo "Published versions: $(tr '\n' ' ' < "$list")"
+        echo "Site size: $(du -sh _site | cut -f1)"
+    - name: Write the repository metadata
+      run: |
+        set -euo pipefail
+        stamp="$(date -u +%Y%m%d%H%M%S)"
+        count=0
+        while IFS= read -r -d '' artifact_dir; do
+          versions=$(find "$artifact_dir" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort -V)
+          test -n "$versions" || continue
+          latest=$(echo "$versions" | tail -1)
+          relative="${artifact_dir#_site/maven/}"
+          group="$(dirname "$relative" | tr '/' '.')"
+          artifact="$(basename "$relative")"
+          {
+            echo '<?xml version="1.0" encoding="UTF-8"?>'
+            echo '<metadata>'
+            echo "  <groupId>$group</groupId>"
+            echo "  <artifactId>$artifact</artifactId>"
+            echo '  <versioning>'
+            echo "    <latest>$latest</latest>"
+            echo "    <release>$latest</release>"
+            echo '    <versions>'
+            echo "$versions" | sed 's|.*|      <version>&</version>|'
+            echo '    </versions>'
+            echo "    <lastUpdated>$stamp</lastUpdated>"
+            echo '  </versioning>'
+            echo '</metadata>'
+          } > "$artifact_dir/maven-metadata.xml"
+          count=$((count + 1))
+        done < <(find _site/maven -type d -exec sh -c 'ls -1 "$1" | grep -q . && find "$1" -mindepth 2 -maxdepth 2 -type f -print -quit | grep -q .' _ {} \; -print0)
+        echo "Wrote metadata for $count artifacts"
+    - name: Point the published wrappers and installers at this repository
+      run: |
+        set -euo pipefail
+        owner='${{ github.repository_owner }}'
+        repo="${GITHUB_REPOSITORY#*/}"
+        root="https://${owner,,}.github.io/$repo/maven"
+        upstream='https://packages.jetbrains.team/maven/p/amper/amper'
+        version='${{ needs.build.outputs.version }}'
+        tag='${{ needs.build.outputs.tag }}'
+        asset="${{ github.server_url }}/${{ github.repository }}/releases/download/$tag/kotlin-cli-$version-dist.tgz"
+        count=0
+        while IFS= read -r -d '' file; do
+          changed=no
+          if grep -qF "$upstream" "$file"; then
+            sed -i "s|$upstream|$root|g" "$file"
+            changed=yes
+          fi
+          # the one line of each wrapper that builds the URL of the distribution archive
+          if grep -qE '^(set )?kotlin_cli_url=' "$file"; then
+            sed -i -E "s|^kotlin_cli_url=.*|kotlin_cli_url=\"$asset\"|" "$file"
+            sed -i -E "s|^set kotlin_cli_url=.*|set kotlin_cli_url=$asset|" "$file"
+            changed=yes
+          fi
+          [ "$changed" = yes ] || continue
+          echo "rewrote ${file#_site/maven/}"
+          count=$((count + 1))
+        done < <(find "_site/maven/org/jetbrains/kotlin/kotlin-cli/$version" -type f \
+          \( -name '*-wrapper' -o -name '*-wrapper.bat' -o -name '*-installer.sh' -o -name '*-installer.ps1' \) -print0)
+        test "$count" -gt 0
+        echo "Rewrote $count files"
+    - name: Write the Maven checksums
+      run: |
+        set -euo pipefail
+        count=0
+        while IFS= read -r -d '' file; do
+          sha1sum "$file" | cut -d' ' -f1 > "$file.sha1"
+          md5sum "$file" | cut -d' ' -f1 > "$file.md5"
+          count=$((count + 1))
+        done < <(find _site/maven -type f \
+          ! -name '*.sha1' ! -name '*.md5' ! -name '*.sha256' ! -name '*.sha512' -print0)
+        echo "Wrote checksums for $count files"
+    - name: Write the landing page
+      run: |
+        set -euo pipefail
+        version='${{ needs.build.outputs.version }}'
+        sha='${{ needs.build.outputs.sha256 }}'
+        tag='${{ needs.build.outputs.tag }}'
+        owner='${{ github.repository_owner }}'
+        repo="${GITHUB_REPOSITORY#*/}"
+        site="https://${owner,,}.github.io/$repo"
+        root="$site/maven"
+        repo_url="${{ github.server_url }}/${{ github.repository }}"
+        base="$root/org/jetbrains/kotlin/kotlin-cli/$version"
+        cat > _site/index.html <<HTML
+        <!doctype html>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kotlin Toolchain $version</title>
+        <style>
+          body { font-family: system-ui, sans-serif; max-width: 54rem; margin: 3rem auto; padding: 0 1rem;
+                 line-height: 1.55; color: #1b1b1f }
+          code { background: #f3f3f5; padding: .1em .3em; border-radius: .25em; font-size: .95em }
+          pre { background: #f3f3f5; padding: .8rem 1rem; border-radius: .4em; overflow-x: auto }
+          pre code { background: none; padding: 0 }
+          table { border-collapse: collapse; margin: 1rem 0 }
+          td, th { text-align: left; padding: .25rem 1.5rem .25rem 0; vertical-align: top }
+          h2 { margin-top: 2.5rem }
+          .muted { color: #55555e }
+        </style>
+        <h1>Kotlin Toolchain <code>$version</code></h1>
+        <p>A fork of <a href="https://github.com/JetBrains/kotlin-toolchain">JetBrains/kotlin-toolchain</a>
+        carrying fixes that are not in an upstream release yet. It is named after the upstream development
+        version it is based on, so <code>$version</code> is this fork of
+        <code>${version%-*-*-*}</code>.</p>
+
+        <h2>Install it in a project</h2>
+        <p>A project that already has Kotlin wrapper scripts switches to this fork with its own
+        <code>update</code> command:</p>
+        <pre><code>./kotlin update -r $root --target-version $version</code></pre>
+        <p>A project without them takes the published scripts directly:</p>
+        <pre><code>base=$base
+        curl -fsSLo kotlin "\$base/kotlin-cli-$version-wrapper" &amp;&amp; curl -fsSLo kotlin.bat "\$base/kotlin-cli-$version-wrapper.bat" &amp;&amp; chmod +x kotlin</code></pre>
+        <p>Or install the toolchain for the user rather than for one project:</p>
+        <pre><code>curl -fsSL $base/kotlin-cli-$version-installer.sh | sh</code></pre>
+        <p class="muted">The scripts carry the version, the checksum and the addresses below, so nothing
+        else has to be configured: no environment variable, and no repository in any manifest. Modules of
+        type <code>jvm/amper-plugin</code> need nothing extra either.</p>
+
+        <h2>This build</h2>
+        <table>
+          <tr><th>Version</th><td><code>$version</code></td></tr>
+          <tr><th>Upstream commit</th><td><code>${{ needs.build.outputs.base }}</code></td></tr>
+          <tr><th>Fork commit</th><td><a href="$repo_url/commit/${{ github.sha }}"><code>${{ github.sha }}</code></a></td></tr>
+          <tr><th>Maven repository</th><td><code>$root</code></td></tr>
+          <tr><th>Distribution archive</th><td><a href="$repo_url/releases/tag/$tag">release <code>$tag</code></a></td></tr>
+          <tr><th>SHA-256 of the archive</th><td><code>$sha</code></td></tr>
+        </table>
+        <p class="muted">The archive is 200+ MB, more than a couple of which would exhaust the 1 GB of this
+        site, so it is attached to a release; everything else - libraries, poms, scripts, checksums,
+        metadata - is served from here, and every version ever published stays available.</p>
+
+        <h2>Fixes in this build</h2>
+        <ul>
+        $(while read -r branch fix_sha subject; do echo "<li>$subject <span class=\"muted\">(<code>$fix_sha</code>, <a href=\"$repo_url/tree/$branch\">$branch</a>)</span></li>"; done < fixes.txt)
+        </ul>
+
+        <h2>Versions published</h2>
+        <ul>
+        $(tac _site/published-versions.txt | while read -r published; do echo "<li><code>$published</code> &mdash; <a href=\"$repo_url/releases/tag/v$published\">archive</a></li>"; done)
+        </ul>
+
+        <p class="muted">How this is built and published:
+        <a href="$repo_url/blob/main/PUBLISHING-FORK.md">PUBLISHING-FORK.md</a>.</p>
+        HTML
+        echo "Landing page written:"; wc -c _site/index.html
+    - name: Save the Maven tree for the next run
+      # The branch holds exactly what the site serves, as one commit: the tree is generated, so its
+      # history is of no interest, and a single commit keeps the branch from growing without end.
+      run: |
+        set -euo pipefail
+        version='${{ needs.build.outputs.version }}'
+        cd _site
+        git init -q -b maven-site
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        # Pages runs Jekyll over a branch it serves unless this file is there, and Jekyll would
+        # skip paths it considers special.
+        touch .nojekyll
+        git add -A
+        git commit -q -m "The Maven tree published for $version" \
+          -m "Written by the publishing workflow of ${{ github.sha }}. This branch is the site, not source."
+        git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" maven-site
+        rm -rf .git
+        echo "Pushed the tree to the maven-site branch"
