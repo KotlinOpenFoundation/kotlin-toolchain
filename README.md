@@ -1,5 +1,10 @@
 # The Kotlin Toolchain
 
+> **This is a fork.** It carries fixes that are not in an upstream release yet, and publishes a
+> distribution of its own that a project can use in the meantime. See
+> [PUBLISHING-FORK.md](PUBLISHING-FORK.md) for how to install it, which fixes it carries, and how it
+> is published. The rest of this file is the upstream README.
+
 [![JetBrains project](https://jb.gg/badges/official.svg)](https://github.com/JetBrains#jetbrains-on-github)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Latest release](https://img.shields.io/github/v/release/JetBrains/kotlin-toolchain?color=brightgreen&label=latest%20release)](https://github.com/JetBrains/kotlin-toolchain/releases)
