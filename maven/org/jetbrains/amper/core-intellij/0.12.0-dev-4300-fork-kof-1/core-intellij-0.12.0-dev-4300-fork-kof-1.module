@@ -1,0 +1,138 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "core-intellij",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "core-intellij-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "core-intellij-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 13634,
+          "sha1": "cfebe801b6fa0e2e4117488fcc245bf5ed33e87c",
+          "md5": "493694e6232743f0c45aae66092ff400"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "toml-psi",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "yaml-psi",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core-impl",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-intellij-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "core-intellij-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 13634,
+          "sha1": "cfebe801b6fa0e2e4117488fcc245bf5ed33e87c",
+          "md5": "493694e6232743f0c45aae66092ff400"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "core-intellij-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "core-intellij-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 4153,
+          "sha1": "a2ee5481ee0bc68e2de85e376511622aafaf58c0",
+          "md5": "4dbbcbabcc64caf58f34d8ccf55c7adf"
+        }
+      ]
+    }
+  ]
+}

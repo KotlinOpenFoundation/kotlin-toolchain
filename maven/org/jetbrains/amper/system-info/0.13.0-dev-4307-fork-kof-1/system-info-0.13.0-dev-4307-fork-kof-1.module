@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "system-info",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "system-info-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "system-info-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 12819,
+          "sha1": "1ee07b827b4ac070b6443d6c42d79ea5ba22eabb",
+          "md5": "6a4b838b17a1f7d115a42d922527202a"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "system-info-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "system-info-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 12819,
+          "sha1": "1ee07b827b4ac070b6443d6c42d79ea5ba22eabb",
+          "md5": "6a4b838b17a1f7d115a42d922527202a"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "system-info-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "system-info-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 2911,
+          "sha1": "39891645dd744c356d2086bf46f1f21936b3f5a3",
+          "md5": "2affd273d3a2645756b5c436e2f97d05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "maven-central-configuration",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 2597,
+          "sha1": "1dedc48007663640c0c1c32c6d1ac430412a878f",
+          "md5": "9b7580f9c2aa554e89d98c219ef192eb"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 2597,
+          "sha1": "1dedc48007663640c0c1c32c6d1ac430412a878f",
+          "md5": "9b7580f9c2aa554e89d98c219ef192eb"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "maven-central-configuration-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 1571,
+          "sha1": "46b8532ed7a2fc6f8192241120a4134f5ee76fdc",
+          "md5": "ae53bebdd9ecc09bbe801bb95d6796f3"
+        }
+      ]
+    }
+  ]
+}

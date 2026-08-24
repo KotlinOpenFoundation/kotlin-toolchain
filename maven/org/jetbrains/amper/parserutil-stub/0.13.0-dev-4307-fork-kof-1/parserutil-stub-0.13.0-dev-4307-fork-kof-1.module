@@ -1,0 +1,140 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "parserutil-stub",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core-impl",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util-ex",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "parserutil-stub-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "parserutil-stub-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 31424,
+          "sha1": "9a57172a13334f7dc479745f108661146d2faff9",
+          "md5": "febd4858c8ac8c25e8d3606cfa238725"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core-impl",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util-ex",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "parserutil-stub-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "parserutil-stub-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 31424,
+          "sha1": "9a57172a13334f7dc479745f108661146d2faff9",
+          "md5": "febd4858c8ac8c25e8d3606cfa238725"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "parserutil-stub-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "parserutil-stub-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 12167,
+          "sha1": "61255d2e4cdfc887f975894ab8987852c81e4ff9",
+          "md5": "4dbaa9895020dd622a5582ef93ca09b9"
+        }
+      ]
+    }
+  ]
+}

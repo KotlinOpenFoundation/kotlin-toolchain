@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "kotlin-native-rules",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 21388,
+          "sha1": "0106efd9f5dcec1c6a118ba6caac3914f8fcf0e0",
+          "md5": "a732095be133b14b3318bd261df92b35"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "concurrency",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 21388,
+          "sha1": "0106efd9f5dcec1c6a118ba6caac3914f8fcf0e0",
+          "md5": "a732095be133b14b3318bd261df92b35"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "kotlin-native-rules-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 5542,
+          "sha1": "33a9a1de9a5c307158c8a7dd29a24fa9fec277fe",
+          "md5": "718d5963e095d5ec62fa460d50767dfd"
+        }
+      ]
+    }
+  ]
+}

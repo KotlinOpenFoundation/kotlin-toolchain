@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "async-processes",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "async-processes-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "async-processes-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 97080,
+          "sha1": "e8a0b0d2f72a7a6b3ace1f8931003cd3deb2867a",
+          "md5": "494e483d656adf7aebc0637b757b3332"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "async-processes-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "async-processes-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 97080,
+          "sha1": "e8a0b0d2f72a7a6b3ace1f8931003cd3deb2867a",
+          "md5": "494e483d656adf7aebc0637b757b3332"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "async-processes-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "async-processes-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 16838,
+          "sha1": "746c337225fbf58b0ab09783d93114576ecfa9d0",
+          "md5": "d87cf2d2f31e12286a21c3c37106d6a2"
+        }
+      ]
+    }
+  ]
+}

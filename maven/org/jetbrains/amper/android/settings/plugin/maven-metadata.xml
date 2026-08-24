@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jetbrains.amper.android.settings</groupId>
+  <artifactId>plugin</artifactId>
+  <versioning>
+    <latest>org.jetbrains.amper.android.settings.plugin.gradle.plugin</latest>
+    <release>org.jetbrains.amper.android.settings.plugin.gradle.plugin</release>
+    <versions>
+      <version>org.jetbrains.amper.android.settings.plugin.gradle.plugin</version>
+    </versions>
+    <lastUpdated>20260824192540</lastUpdated>
+  </versioning>
+</metadata>

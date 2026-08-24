@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-android-sdk-detector",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 3494,
+          "sha1": "dc087031908d12be456c138cdf0cfff59e00d8e3",
+          "md5": "cedb42052f4958158e034ff3cefff5e6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 3494,
+          "sha1": "dc087031908d12be456c138cdf0cfff59e00d8e3",
+          "md5": "cedb42052f4958158e034ff3cefff5e6"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "amper-android-sdk-detector-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 1531,
+          "sha1": "165ad91ac4b268f784f342382bac276e67269aae",
+          "md5": "51676a99b844734b1b41a69df7ace979"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "toml-psi",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "toml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "toml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 96258,
+          "sha1": "76b165423471924e9af16262bc55d0cf8dd635cd",
+          "md5": "ab6c30df553675f418d755ace90377bd"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "parserutil-stub",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "toml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "toml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 96258,
+          "sha1": "76b165423471924e9af16262bc55d0cf8dd635cd",
+          "md5": "ab6c30df553675f418d755ace90377bd"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "toml-psi-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "toml-psi-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 29013,
+          "sha1": "3aeaef49e749fb7cad9c4414e5fbe6d7325dbeea",
+          "md5": "0ff1a570da43dd4aaca8aacffa88c8e0"
+        }
+      ]
+    }
+  ]
+}

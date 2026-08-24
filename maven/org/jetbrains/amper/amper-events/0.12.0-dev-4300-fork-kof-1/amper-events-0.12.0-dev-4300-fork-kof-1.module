@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-events",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-events-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-events-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 122988,
+          "sha1": "86506ef88b4a18e1368a5827ac6d68ebbcaceeab",
+          "md5": "8ce0d8f5f71497209aeb41e9184e1b27"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-events-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-events-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 122988,
+          "sha1": "86506ef88b4a18e1368a5827ac6d68ebbcaceeab",
+          "md5": "8ce0d8f5f71497209aeb41e9184e1b27"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-events-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-events-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 9207,
+          "sha1": "d6e498ddcd22da37c83b38975e8930e1ed8d1d2b",
+          "md5": "c9970b7ed2c2833541dc34279aad4ea0"
+        }
+      ]
+    }
+  ]
+}

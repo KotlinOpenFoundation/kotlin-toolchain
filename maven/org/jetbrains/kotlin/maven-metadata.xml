@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jetbrains</groupId>
+  <artifactId>kotlin</artifactId>
+  <versioning>
+    <latest>kotlin-cli-sdkman</latest>
+    <release>kotlin-cli-sdkman</release>
+    <versions>
+      <version>kotlin-cli</version>
+      <version>kotlin-cli-sdkman</version>
+    </versions>
+    <lastUpdated>20260824192540</lastUpdated>
+  </versioning>
+</metadata>

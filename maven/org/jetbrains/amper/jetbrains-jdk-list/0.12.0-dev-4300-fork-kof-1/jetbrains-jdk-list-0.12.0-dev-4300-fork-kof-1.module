@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "jetbrains-jdk-list",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 31258,
+          "sha1": "aa7514d9b7b2e53f7384125b812b5ea51faf1c7f",
+          "md5": "2433ede400670d6b30bca51a46c830b2"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core-jvm",
+          "version": {
+            "requires": "3.4.1"
+          }
+        },
+        {
+          "group": "org.tukaani",
+          "module": "xz",
+          "version": {
+            "requires": "1.11"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 31258,
+          "sha1": "aa7514d9b7b2e53f7384125b812b5ea51faf1c7f",
+          "md5": "2433ede400670d6b30bca51a46c830b2"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "jetbrains-jdk-list-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 1910,
+          "sha1": "f0b2445e9e7bb3fd219a12ead3e64e9e862c7259",
+          "md5": "6a85dc3f5bddb778df42da910f5383ce"
+        }
+      ]
+    }
+  ]
+}

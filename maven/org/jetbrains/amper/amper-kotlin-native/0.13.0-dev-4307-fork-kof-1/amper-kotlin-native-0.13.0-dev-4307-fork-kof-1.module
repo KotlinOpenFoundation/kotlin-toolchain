@@ -1,0 +1,126 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-kotlin-native",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "kotlin-native-rules",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 10814,
+          "sha1": "9139293f77a0ff24873146b7307a82ba2bb99c7f",
+          "md5": "38335cd3bbddd9fcaeceec8f6df2e50a"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "kotlin-native-rules",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 10814,
+          "sha1": "9139293f77a0ff24873146b7307a82ba2bb99c7f",
+          "md5": "38335cd3bbddd9fcaeceec8f6df2e50a"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "amper-kotlin-native-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 3096,
+          "sha1": "7ee964cab89fcfb41efed55c7ba84bdc094bc5d8",
+          "md5": "6e248594ef704bb1e9d546260527c16f"
+        }
+      ]
+    }
+  ]
+}

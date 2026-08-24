@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "kotlin-project-structure-metadata",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 30817,
+          "sha1": "c852cdc7b2a620f9b84581dffb770316c9a0a085",
+          "md5": "7db03978d35a87ab0518eef3691cf7f5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 30817,
+          "sha1": "c852cdc7b2a620f9b84581dffb770316c9a0a085",
+          "md5": "7db03978d35a87ab0518eef3691cf7f5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "kotlin-project-structure-metadata-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 2353,
+          "sha1": "a26bbe46501020f85701dcfbd7e7c929b85a10c3",
+          "md5": "2590535b2539518984e1728363041e00"
+        }
+      ]
+    }
+  ]
+}

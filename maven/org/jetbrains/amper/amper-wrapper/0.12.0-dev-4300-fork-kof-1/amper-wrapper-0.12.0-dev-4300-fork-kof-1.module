@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-wrapper",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-wrapper-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-wrapper-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 37499,
+          "sha1": "81465e2dc5f12ec9418d68726094f6e6715684eb",
+          "md5": "360875abf6f39d46c7503756b16adb0e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "stdlib-extended",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-wrapper-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-wrapper-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 37499,
+          "sha1": "81465e2dc5f12ec9418d68726094f6e6715684eb",
+          "md5": "360875abf6f39d46c7503756b16adb0e"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-wrapper-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-wrapper-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 4590,
+          "sha1": "f292ef788172dc017dba4b23909ab6da8e39eb61",
+          "md5": "1fdaa31333b2c5bb32b9a1a96c12fdb5"
+        }
+      ]
+    }
+  ]
+}

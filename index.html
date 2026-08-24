@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotlin Toolchain 0.13.0-dev-4307-fork-kof-1</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 54rem; margin: 3rem auto; padding: 0 1rem;
+         line-height: 1.55; color: #1b1b1f }
+  code { background: #f3f3f5; padding: .1em .3em; border-radius: .25em; font-size: .95em }
+  pre { background: #f3f3f5; padding: .8rem 1rem; border-radius: .4em; overflow-x: auto }
+  pre code { background: none; padding: 0 }
+  table { border-collapse: collapse; margin: 1rem 0 }
+  td, th { text-align: left; padding: .25rem 1.5rem .25rem 0; vertical-align: top }
+  h2 { margin-top: 2.5rem }
+  .muted { color: #55555e }
+</style>
+<h1>Kotlin Toolchain <code>0.13.0-dev-4307-fork-kof-1</code></h1>
+<p>A fork of <a href="https://github.com/JetBrains/kotlin-toolchain">JetBrains/kotlin-toolchain</a>
+carrying fixes that are not in an upstream release yet. It is named after the upstream development
+version it is based on, so <code>0.13.0-dev-4307-fork-kof-1</code> is this fork of
+<code>0.13.0-dev-4307</code>.</p>
+
+<h2>Install it in a project</h2>
+<p>A project that already has Kotlin wrapper scripts switches to this fork with its own
+<code>update</code> command:</p>
+<pre><code>./kotlin update -r https://kotlinopenfoundation.github.io/kotlin-toolchain/maven --target-version 0.13.0-dev-4307-fork-kof-1</code></pre>
+<p>A project without them takes the published scripts directly:</p>
+<pre><code>base=https://kotlinopenfoundation.github.io/kotlin-toolchain/maven/org/jetbrains/kotlin/kotlin-cli/0.13.0-dev-4307-fork-kof-1
+curl -fsSLo kotlin "$base/kotlin-cli-0.13.0-dev-4307-fork-kof-1-wrapper" &amp;&amp; curl -fsSLo kotlin.bat "$base/kotlin-cli-0.13.0-dev-4307-fork-kof-1-wrapper.bat" &amp;&amp; chmod +x kotlin</code></pre>
+<p>Or install the toolchain for the user rather than for one project:</p>
+<pre><code>curl -fsSL https://kotlinopenfoundation.github.io/kotlin-toolchain/maven/org/jetbrains/kotlin/kotlin-cli/0.13.0-dev-4307-fork-kof-1/kotlin-cli-0.13.0-dev-4307-fork-kof-1-installer.sh | sh</code></pre>
+<p class="muted">The scripts carry the version, the checksum and the addresses below, so nothing
+else has to be configured: no environment variable, and no repository in any manifest. Modules of
+type <code>jvm/amper-plugin</code> need nothing extra either.</p>
+
+<h2>This build</h2>
+<table>
+  <tr><th>Version</th><td><code>0.13.0-dev-4307-fork-kof-1</code></td></tr>
+  <tr><th>Upstream commit</th><td><code>546297f3c</code></td></tr>
+  <tr><th>Fork commit</th><td><a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/commit/9ab2b81ef891c9fb221d8c76579e93e4de22cc83"><code>9ab2b81ef891c9fb221d8c76579e93e4de22cc83</code></a></td></tr>
+  <tr><th>Maven repository</th><td><code>https://kotlinopenfoundation.github.io/kotlin-toolchain/maven</code></td></tr>
+  <tr><th>Distribution archive</th><td><a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/releases/tag/v0.13.0-dev-4307-fork-kof-1">release <code>v0.13.0-dev-4307-fork-kof-1</code></a></td></tr>
+  <tr><th>SHA-256 of the archive</th><td><code>2220c7fdc89a7e8ac46000ba84919715cd6eec0d6efd796629d7c471feab6b48</code></td></tr>
+</table>
+<p class="muted">The archive is 200+ MB, more than a couple of which would exhaust the 1 GB of this
+site, so it is attached to a release; everything else - libraries, poms, scripts, checksums,
+metadata - is served from here, and every version ever published stays available.</p>
+
+<h2>Fixes in this build</h2>
+<ul>
+<li>Generate the cinterop klibs of plugin-contributed defs during sync <span class="muted">(<code>2fce7ae99</code>, <a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/tree/fix/generate-klibs-include-plugin-cinterops">fix/generate-klibs-include-plugin-cinterops</a>)</span></li>
+<li>Take the plugin API from the repository the distribution came from <span class="muted">(<code>98b14d135</code>, <a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/tree/fix/plugin-api-from-distribution-repository">fix/plugin-api-from-distribution-repository</a>)</span></li>
+</ul>
+
+<h2>Versions published</h2>
+<ul>
+<li><code>0.13.0-dev-4307-fork-kof-1</code> &mdash; <a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/releases/tag/v0.13.0-dev-4307-fork-kof-1">archive</a></li>
+<li><code>0.12.0-dev-4300-fork-kof-1</code> &mdash; <a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/releases/tag/v0.12.0-dev-4300-fork-kof-1">archive</a></li>
+</ul>
+
+<p class="muted">How this is built and published:
+<a href="https://github.com/KotlinOpenFoundation/kotlin-toolchain/blob/main/PUBLISHING-FORK.md">PUBLISHING-FORK.md</a>.</p>

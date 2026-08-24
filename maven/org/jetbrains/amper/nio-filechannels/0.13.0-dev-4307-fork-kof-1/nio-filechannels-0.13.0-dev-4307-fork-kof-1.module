@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "nio-filechannels",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "nio-filechannels-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "nio-filechannels-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 3146,
+          "sha1": "8fa1665ce2ed93baeb7de95be653bd410bfe21f9",
+          "md5": "12ef6610504f9614fb62a23a8fba0016"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "nio-filechannels-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "nio-filechannels-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 3146,
+          "sha1": "8fa1665ce2ed93baeb7de95be653bd410bfe21f9",
+          "md5": "12ef6610504f9614fb62a23a8fba0016"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "nio-filechannels-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "nio-filechannels-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 1866,
+          "sha1": "bf4c138adf48dc0ce11f2be069667ae955837d01",
+          "md5": "ba1b7c666899956afd3551ce93e0ee62"
+        }
+      ]
+    }
+  ]
+}

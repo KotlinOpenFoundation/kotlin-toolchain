@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata, -->
+  <!-- which should be used instead. Do not delete the following line which -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jetbrains.amper.android.settings.plugin</groupId>
+  <artifactId>org.jetbrains.amper.android.settings.plugin.gradle.plugin</artifactId>
+  <version>0.13.0-dev-4307-fork-kof-1</version>
+  <name>amper-android-gradle-plugin</name>
+  <description>A gradle plugin to handle Android builds that are delegated from Amper.</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>amper-android-gradle-api</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>amper-android-sdk-detector</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>frontend-api</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>schema</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>stdlib-extended</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.amper</groupId>
+      <artifactId>maven-central-configuration</artifactId>
+      <version>0.13.0-dev-4307-fork-kof-1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.android.tools.build</groupId>
+      <artifactId>gradle</artifactId>
+      <version>9.3.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gms</groupId>
+      <artifactId>google-services</artifactId>
+      <version>4.4.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>dev.gradleplugins</groupId>
+      <artifactId>gradle-api</artifactId>
+      <version>8.11.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
+      <version>2.4.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlinx</groupId>
+      <artifactId>kotlinx-serialization-core-jvm</artifactId>
+      <version>1.11.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlinx</groupId>
+      <artifactId>kotlinx-serialization-json-jvm</artifactId>
+      <version>1.11.0</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
