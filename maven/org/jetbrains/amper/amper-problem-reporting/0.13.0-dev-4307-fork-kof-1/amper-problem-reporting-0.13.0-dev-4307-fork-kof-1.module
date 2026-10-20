@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-problem-reporting",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 25287,
+          "sha1": "db0894fd77e0bde2a2e0016949422c72e8f278fb",
+          "md5": "df95320349b7bf516d43c5382ccb6f4c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "26.1.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "stdlib-extended",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 25287,
+          "sha1": "db0894fd77e0bde2a2e0016949422c72e8f278fb",
+          "md5": "df95320349b7bf516d43c5382ccb6f4c"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "amper-problem-reporting-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 7457,
+          "sha1": "261f823e61f80dd826e50e079e9c33dad856fa8e",
+          "md5": "be1b6341aba9bb20bea311aac4e7ff96"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "dependency-resolution",
+    "version": "0.14.0-dev-4509-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4506"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "incremental-cache",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "dependency-resolution-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "dependency-resolution-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 1288919,
+          "sha1": "692685d473f5f833f774b5e0df4078b93b7832bc",
+          "md5": "49e3bc3fe8e73529a839a05dbf468f08"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "concurrency",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "gradle-module-metadata",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "kotlin-project-structure-metadata",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "nio-filechannels",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "incremental-cache",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "serialization-extended",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization-jvm",
+          "version": {
+            "requires": "0.86.2"
+          }
+        },
+        {
+          "group": "org.apache.maven",
+          "module": "maven-artifact",
+          "version": {
+            "requires": "3.9.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "dependency-resolution-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "dependency-resolution-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 1288919,
+          "sha1": "692685d473f5f833f774b5e0df4078b93b7832bc",
+          "md5": "49e3bc3fe8e73529a839a05dbf468f08"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "dependency-resolution-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "url": "dependency-resolution-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "size": 132069,
+          "sha1": "82f0e979d7dfb5e83817691bb6f39184c54072b6",
+          "md5": "fae798f9dc8d3e23d91d6f8dd861b5e1"
+        }
+      ]
+    }
+  ]
+}

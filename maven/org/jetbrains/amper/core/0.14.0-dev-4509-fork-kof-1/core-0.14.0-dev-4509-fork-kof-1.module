@@ -1,0 +1,203 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "core",
+    "version": "0.14.0-dev-4509-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4506"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-events",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-jvm",
+          "version": {
+            "requires": "3.4.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "core-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 104187,
+          "sha1": "700b531a43f803be34f401fa19082e30058da8ad",
+          "md5": "4dec3852e51809fcd95b9f2f89d4b227"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-telemetry",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-events",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "concurrency",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "nio-filechannels",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "stdlib-extended",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-compress",
+          "version": {
+            "requires": "1.28.0"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.20"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-jvm",
+          "version": {
+            "requires": "3.4.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-encoding-jvm",
+          "version": {
+            "requires": "3.4.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-auth-jvm",
+          "version": {
+            "requires": "3.4.1"
+          }
+        },
+        {
+          "group": "net.java.dev.jna",
+          "module": "jna-platform",
+          "version": {
+            "requires": "5.19.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "core-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 104187,
+          "sha1": "700b531a43f803be34f401fa19082e30058da8ad",
+          "md5": "4dec3852e51809fcd95b9f2f89d4b227"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "core-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "url": "core-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "size": 17414,
+          "sha1": "08c14644c922137699ee7fee5c81e5ade4e6b830",
+          "md5": "e5149c312ba481753e51adcd9ee8c62c"
+        }
+      ]
+    }
+  ]
+}

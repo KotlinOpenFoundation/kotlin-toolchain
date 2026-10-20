@@ -1,0 +1,273 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "schema",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-extensibility-schema-model",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "schema-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "schema-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 1473793,
+          "sha1": "608f3e3e9d38aac817d4e43bf67bf65e09256f8c",
+          "md5": "578b0a80a252f0aae223bb356dcf43d7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-swift-pm-resolution-model",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-telemetry",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-extensibility-schema-model",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "toml-psi",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "yaml-psi",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "stdlib-extended",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core-intellij",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.apache.maven",
+          "module": "maven-artifact",
+          "version": {
+            "requires": "3.9.16"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "core-impl",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "com.jetbrains.intellij.platform",
+          "module": "util",
+          "version": {
+            "requires": "261.26222.65"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization-jvm",
+          "version": {
+            "requires": "0.86.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "schema-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "schema-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 1473793,
+          "sha1": "608f3e3e9d38aac817d4e43bf67bf65e09256f8c",
+          "md5": "578b0a80a252f0aae223bb356dcf43d7"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "schema-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "schema-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 204611,
+          "sha1": "4aa364acbd62294b7e0605e60d5749dfe352884d",
+          "md5": "cc7e71ade428fc6fcefcb51af9f31530"
+        }
+      ]
+    }
+  ]
+}

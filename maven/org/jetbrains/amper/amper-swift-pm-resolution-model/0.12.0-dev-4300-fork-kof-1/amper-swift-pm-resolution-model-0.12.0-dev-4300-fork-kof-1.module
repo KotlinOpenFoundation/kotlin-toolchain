@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-swift-pm-resolution-model",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 112191,
+          "sha1": "bb497362096a5cac1aee0b7dd4d89d5e5e5c943b",
+          "md5": "fe2daf832834ee2196d42a559fdc6590"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "serialization-extended",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 112191,
+          "sha1": "bb497362096a5cac1aee0b7dd4d89d5e5e5c943b",
+          "md5": "fe2daf832834ee2196d42a559fdc6590"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-swift-pm-resolution-model-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 4145,
+          "sha1": "1262d310de0c5a026077cdeb5488ebc7c0de9371",
+          "md5": "8242776146dcebfb6738ef7c10756298"
+        }
+      ]
+    }
+  ]
+}

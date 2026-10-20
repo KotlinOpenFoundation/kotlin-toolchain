@@ -1,0 +1,147 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-maven-plugins-compatibility",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 9957,
+          "sha1": "2c3c903fb811c3d35c24919d8f1cf39c4891bae2",
+          "md5": "e5b38c05925b8249ed1f8b9de1e31ef9"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dependency-resolution",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "schema",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dr",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-maven-plugin-download",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization-jvm",
+          "version": {
+            "requires": "0.86.2"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 9957,
+          "sha1": "2c3c903fb811c3d35c24919d8f1cf39c4891bae2",
+          "md5": "e5b38c05925b8249ed1f8b9de1e31ef9"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "amper-maven-plugins-compatibility-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 1895,
+          "sha1": "f13529014edc81ed3b509a0fc8a1df8886cbaf2b",
+          "md5": "3ee2cae005c4cf9fcccfb94731a8802c"
+        }
+      ]
+    }
+  ]
+}

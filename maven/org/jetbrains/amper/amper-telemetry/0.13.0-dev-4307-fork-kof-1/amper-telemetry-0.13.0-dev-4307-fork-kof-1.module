@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-telemetry",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-telemetry-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-telemetry-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 19905,
+          "sha1": "86e7f5061549f9858b3d3799c4a65fbec564636f",
+          "md5": "f168e70d156b54f15ed2818e345d90dd"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.16"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-common",
+          "version": {
+            "requires": "1.60.1"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-exporter-logging-otlp",
+          "version": {
+            "requires": "1.60.1"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk-trace",
+          "version": {
+            "requires": "1.60.1"
+          }
+        },
+        {
+          "group": "io.opentelemetry",
+          "module": "opentelemetry-sdk",
+          "version": {
+            "requires": "1.60.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-telemetry-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "amper-telemetry-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 19905,
+          "sha1": "86e7f5061549f9858b3d3799c4a65fbec564636f",
+          "md5": "f168e70d156b54f15ed2818e345d90dd"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-telemetry-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "amper-telemetry-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 4617,
+          "sha1": "ffd20b450cc29417c5d050f1393f8708ccc0ddee",
+          "md5": "e820d47487fc68f88da73ce981be0d60"
+        }
+      ]
+    }
+  ]
+}

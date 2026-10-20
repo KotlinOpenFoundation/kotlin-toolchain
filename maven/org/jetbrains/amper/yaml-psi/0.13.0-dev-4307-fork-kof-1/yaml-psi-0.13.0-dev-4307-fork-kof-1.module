@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "yaml-psi",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "yaml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "yaml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 127599,
+          "sha1": "14de91a8ddbdf78f285e80da5047d390f2abde2d",
+          "md5": "0ff76db978dd500ab5b823a74aa79099"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "parserutil-stub",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.intellij.deps.fastutil",
+          "module": "intellij-deps-fastutil",
+          "version": {
+            "requires": "8.5.18-jb1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yaml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "yaml-psi-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 127599,
+          "sha1": "14de91a8ddbdf78f285e80da5047d390f2abde2d",
+          "md5": "0ff76db978dd500ab5b823a74aa79099"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "yaml-psi-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "yaml-psi-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 71573,
+          "sha1": "e6d50906410539347d2df009f0602dac1aeb21a0",
+          "md5": "4ed02bafb46cd87011cbece863f9d259"
+        }
+      ]
+    }
+  ]
+}

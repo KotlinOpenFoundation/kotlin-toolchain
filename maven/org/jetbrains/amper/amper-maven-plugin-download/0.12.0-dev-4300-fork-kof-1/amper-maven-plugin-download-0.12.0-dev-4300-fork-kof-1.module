@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-maven-plugin-download",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 6001,
+          "sha1": "6e6e1ddd906db40fd8e589a458930531a7ddd01e",
+          "md5": "1fce80e28d86d6a81c6ec0be44abd5ed"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dr",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 6001,
+          "sha1": "6e6e1ddd906db40fd8e589a458930531a7ddd01e",
+          "md5": "1fce80e28d86d6a81c6ec0be44abd5ed"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-maven-plugin-download-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 1931,
+          "sha1": "defd69fcc265bf088ba05cdeb511fef5e2033098",
+          "md5": "907f3a62a2ccbeabdb260b6daaf394e5"
+        }
+      ]
+    }
+  ]
+}

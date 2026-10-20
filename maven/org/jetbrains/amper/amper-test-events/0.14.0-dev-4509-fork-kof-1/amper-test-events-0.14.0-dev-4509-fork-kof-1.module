@@ -1,0 +1,112 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-test-events",
+    "version": "0.14.0-dev-4509-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4506"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-events",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-test-events-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "amper-test-events-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 128203,
+          "sha1": "288120f55431d7c46d4301b2b3e77ec3810022ce",
+          "md5": "54660aeeefd83a15a8730125ca1099bb"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-events",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "serialization-extended",
+          "version": {
+            "requires": "0.14.0-dev-4509-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-test-events-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "amper-test-events-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 128203,
+          "sha1": "288120f55431d7c46d4301b2b3e77ec3810022ce",
+          "md5": "54660aeeefd83a15a8730125ca1099bb"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-test-events-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "url": "amper-test-events-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "size": 2778,
+          "sha1": "43bcd5fc3a5934fd2b33462746ce41dec798c7da",
+          "md5": "f3828810370b2a610879e6b272a02e46"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-project-templates",
+    "version": "0.14.0-dev-4503-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4495"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-project-templates-0.14.0-dev-4503-fork-kof-1.jar",
+          "url": "amper-project-templates-0.14.0-dev-4503-fork-kof-1.jar",
+          "size": 213633,
+          "sha1": "358d272226301dba46062ae901c0fb02856192cb",
+          "md5": "77042bfc95b9b533909851ab803acebe"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-project-template-resources",
+          "version": {
+            "requires": "0.14.0-dev-4503-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-project-templates-0.14.0-dev-4503-fork-kof-1.jar",
+          "url": "amper-project-templates-0.14.0-dev-4503-fork-kof-1.jar",
+          "size": 213633,
+          "sha1": "358d272226301dba46062ae901c0fb02856192cb",
+          "md5": "77042bfc95b9b533909851ab803acebe"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-project-templates-0.14.0-dev-4503-fork-kof-1-sources.jar",
+          "url": "amper-project-templates-0.14.0-dev-4503-fork-kof-1-sources.jar",
+          "size": 5122,
+          "sha1": "1e8302a41f50cd1db41eb202d70d9a171843f2a6",
+          "md5": "cb077ffb2a1213a49540af9b9cf53e7a"
+        }
+      ]
+    }
+  ]
+}

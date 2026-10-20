@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "concurrency",
+    "version": "0.14.0-dev-4509-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4506"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "concurrency-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "concurrency-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 54937,
+          "sha1": "a57c5ea87eac9bb7e6eb0067ede27069a7fc5578",
+          "md5": "5e09341fa6424c3fe9514d6ff8af2810"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "concurrency-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "concurrency-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 54937,
+          "sha1": "a57c5ea87eac9bb7e6eb0067ede27069a7fc5578",
+          "md5": "5e09341fa6424c3fe9514d6ff8af2810"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "concurrency-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "url": "concurrency-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "size": 11976,
+          "sha1": "20e603f1615f759ece89e75b994b7c1f7b552d34",
+          "md5": "3bcc09bfc96be6f1b66f51ac47c37542"
+        }
+      ]
+    }
+  ]
+}

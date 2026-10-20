@@ -1,0 +1,196 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-jdk-provisioning",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "incremental-cache",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 184732,
+          "sha1": "0863508b3855f75798b24907c670376977b3a0fb",
+          "md5": "f9168b4fe7be52244413a68586dea226"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "concurrency",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "incremental-cache",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "jetbrains-jdk-list",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "serialization-extended",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core-jvm",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "2.0.16"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 184732,
+          "sha1": "0863508b3855f75798b24907c670376977b3a0fb",
+          "md5": "f9168b4fe7be52244413a68586dea226"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-jdk-provisioning-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 18236,
+          "sha1": "e86732891cf67c272ccfed10df1d91b20fba4947",
+          "md5": "c7e0c29793316971b91b575b27fe29b6"
+        }
+      ]
+    }
+  ]
+}

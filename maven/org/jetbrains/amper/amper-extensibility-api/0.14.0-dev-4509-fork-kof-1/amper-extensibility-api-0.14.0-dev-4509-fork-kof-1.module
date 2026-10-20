@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-extensibility-api",
+    "version": "0.14.0-dev-4509-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4506"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 20197,
+          "sha1": "31a7135dc67371e88056f5657b627eeff8a17fa5",
+          "md5": "a17902e43f8621db0e4cdaaa68bcde68"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1.jar",
+          "url": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1.jar",
+          "size": 20197,
+          "sha1": "31a7135dc67371e88056f5657b627eeff8a17fa5",
+          "md5": "a17902e43f8621db0e4cdaaa68bcde68"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "url": "amper-extensibility-api-0.14.0-dev-4509-fork-kof-1-sources.jar",
+          "size": 10059,
+          "sha1": "d26d29692565ec74bcdb189b9acedb6c9b7672a2",
+          "md5": "5a9a7d7d46b33938824987adf5f60b2a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "stdlib-extended",
+    "version": "0.14.0-dev-4503-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.14.0-dev-4495"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "stdlib-extended-0.14.0-dev-4503-fork-kof-1.jar",
+          "url": "stdlib-extended-0.14.0-dev-4503-fork-kof-1.jar",
+          "size": 33593,
+          "sha1": "77c0b0076acbb3413f97a1737e31df7e0c414810",
+          "md5": "aa268ce83fe17783fe35a63dda11ffb4"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "stdlib-extended-0.14.0-dev-4503-fork-kof-1.jar",
+          "url": "stdlib-extended-0.14.0-dev-4503-fork-kof-1.jar",
+          "size": 33593,
+          "sha1": "77c0b0076acbb3413f97a1737e31df7e0c414810",
+          "md5": "aa268ce83fe17783fe35a63dda11ffb4"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "stdlib-extended-0.14.0-dev-4503-fork-kof-1-sources.jar",
+          "url": "stdlib-extended-0.14.0-dev-4503-fork-kof-1-sources.jar",
+          "size": 14862,
+          "sha1": "6dac18e0316934b722820ed6cb83419fe9078aaa",
+          "md5": "75d63e59b2b8acb79ea69501fbfab844"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-libraries-for-idea",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-jdk-provisioning",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-maven-plugin-download",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-maven-plugins-compatibility",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-project-templates",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-wrapper",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-android-sdk-detector",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core-intellij",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dependency-resolution",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-schema-processing",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dr",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "schema",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "gradle-module-metadata",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "kotlin-project-structure-metadata",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 189,
+          "sha1": "524445dd41f884a7f7d6efe8658a816c6493d165",
+          "md5": "0e0c61e9a6d19b46ffa1059cdebb0aab"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-build-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-jdk-provisioning",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-maven-plugin-download",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-maven-plugins-compatibility",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-problem-reporting",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-project-templates",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-wrapper",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-android-sdk-detector",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core-intellij",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "core",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dependency-resolution",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-schema-processing",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "dr",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "schema",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "gradle-module-metadata",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "kotlin-project-structure-metadata",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-plugin-xml-parser",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "system-info",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "telemetry",
+          "version": {
+            "requires": "0.12.0-dev-4300-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 189,
+          "sha1": "524445dd41f884a7f7d6efe8658a816c6493d165",
+          "md5": "0e0c61e9a6d19b46ffa1059cdebb0aab"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-libraries-for-idea-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 189,
+          "sha1": "1acd3faa61fb237eaf0c05c9545c0c93fa8af968",
+          "md5": "3f1377ed87f4dc32dbee7d9fb5765aca"
+        }
+      ]
+    }
+  ]
+}

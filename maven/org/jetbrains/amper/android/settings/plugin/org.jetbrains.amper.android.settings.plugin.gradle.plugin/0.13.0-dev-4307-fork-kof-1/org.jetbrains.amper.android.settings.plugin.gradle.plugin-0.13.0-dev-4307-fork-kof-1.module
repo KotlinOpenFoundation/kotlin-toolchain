@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper.android.settings.plugin",
+    "module": "org.jetbrains.amper.android.settings.plugin.gradle.plugin",
+    "version": "0.13.0-dev-4307-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 40366,
+          "sha1": "5cdc82c25f7827be38cb3499be6de756ad65a531",
+          "md5": "3e3f6318e810c84ca4a5b11fdf6e47d6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-android-gradle-api",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "amper-android-sdk-detector",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "frontend-api",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "schema",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "stdlib-extended",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "org.jetbrains.amper",
+          "module": "maven-central-configuration",
+          "version": {
+            "requires": "0.13.0-dev-4307-fork-kof-1"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "9.3.1"
+          }
+        },
+        {
+          "group": "com.google.gms",
+          "module": "google-services",
+          "version": {
+            "requires": "4.4.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-core-jvm",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json-jvm",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1.jar",
+          "url": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1.jar",
+          "size": 40366,
+          "sha1": "5cdc82c25f7827be38cb3499be6de756ad65a531",
+          "md5": "3e3f6318e810c84ca4a5b11fdf6e47d6"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "url": "org.jetbrains.amper.android.settings.plugin.gradle.plugin-0.13.0-dev-4307-fork-kof-1-sources.jar",
+          "size": 11409,
+          "sha1": "4c548efc3a017101de1d2abd009dada320ee9298",
+          "md5": "8fe26007d4739d5b6032a6d740a8279f"
+        }
+      ]
+    }
+  ]
+}

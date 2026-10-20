@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org</groupId>
+  <artifactId>jetbrains</artifactId>
+  <versioning>
+    <latest>kotlin</latest>
+    <release>kotlin</release>
+    <versions>
+      <version>amper</version>
+      <version>kotlin</version>
+    </versions>
+    <lastUpdated>20261020104654</lastUpdated>
+  </versioning>
+</metadata>

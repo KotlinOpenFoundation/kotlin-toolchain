@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.amper",
+    "module": "amper-build-info",
+    "version": "0.12.0-dev-4300-fork-kof-1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "kotlinToolchain": {
+      "version": "0.12.0-dev-4289"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "amper-build-info-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-build-info-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 2223,
+          "sha1": "4004048423fe2781bd4473ea39d61bcc64bccddf",
+          "md5": "22b61d6a46b6ec8ab420572ca8409f42"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "amper-build-info-0.12.0-dev-4300-fork-kof-1.jar",
+          "url": "amper-build-info-0.12.0-dev-4300-fork-kof-1.jar",
+          "size": 2223,
+          "sha1": "4004048423fe2781bd4473ea39d61bcc64bccddf",
+          "md5": "22b61d6a46b6ec8ab420572ca8409f42"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "amper-build-info-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "url": "amper-build-info-0.12.0-dev-4300-fork-kof-1-sources.jar",
+          "size": 189,
+          "sha1": "1acd3faa61fb237eaf0c05c9545c0c93fa8af968",
+          "md5": "3f1377ed87f4dc32dbee7d9fb5765aca"
+        }
+      ]
+    }
+  ]
+}
